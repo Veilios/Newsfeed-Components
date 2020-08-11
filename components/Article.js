@@ -86,6 +86,20 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Best Practice',
+    date: 'Dec 2nd, 2019',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis purus sit amet volutpat consequat mauris nunc. Ut eu sem integer vitae justo eget magna. Tortor aliquam nulla facilisi cras fermentum. Nec sagittis aliquam malesuada bibendum arcu. Arcu odio ut sem nulla. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Ultrices gravida dictum fusce ut. Maecenas volutpat blandit aliquam etiam. Lacus sed turpis tincidunt id aliquet risus feugiat.',
+    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis purus sit amet volutpat consequat mauris nunc. Ut eu sem integer vitae justo eget magna. Tortor aliquam nulla facilisi cras fermentum. Nec sagittis aliquam malesuada bibendum arcu. Arcu odio ut sem nulla. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Ultrices gravida dictum fusce ut. Maecenas volutpat blandit aliquam etiam. Lacus sed turpis tincidunt id aliquet risus feugiat.',
+    thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id cursus metus aliquam eleifend mi in nulla posuere. Tempor orci dapibus ultrices in iaculis nunc. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Felis donec et odio pellentesque diam volutpat. Consequat nisl vel pretium lectus quam id. Elementum tempus egestas sed sed risus pretium quam. Cras fermentum odio eu feugiat. Sagittis id consectetur purus ut faucibus pulvinar elementum. Praesent elementum facilisis leo vel fringilla. Mollis aliquam ut porttitor leo a diam sollicitudin tempor. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Nisl suscipit adipiscing bibendum est. Etiam dignissim diam quis enim lobortis scelerisque. Et malesuada fames ac turpis egestas integer eget. Molestie ac feugiat sed lectus. At ultrices mi tempus imperdiet nulla malesuada pellentesque. Eu volutpat odio facilisis mauris sit. Tempus iaculis urna id volutpat lacus laoreet. Blandit libero volutpat sed cras ornare arcu dui.'
+  },
+  {
+    title: 'How to get a job at Google',
+    date: 'Aug 23rd, 2020',
+    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra orci sagittis eu volutpat odio. Massa tempor nec feugiat nisl pretium fusce id. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris. Enim ut sem viverra aliquet eget. In aliquam sem fringilla ut morbi tincidunt augue. Vulputate ut pharetra sit amet aliquam id diam maecenas. Eget arcu dictum varius duis. Amet cursus sit amet dictum sit.',
+    secondParagraph: 'Morbi tristique senectus et netus. Fringilla ut morbi tincidunt augue interdum velit. Sed faucibus turpis in eu mi bibendum neque. Id donec ultrices tincidunt arcu non sodales neque sodales. Nulla pharetra diam sit amet nisl suscipit. Sit amet risus nullam eget felis. In egestas erat imperdiet sed euismod nisi. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Risus sed vulputate odio ut. Pharetra diam sit amet nisl suscipit adipiscing. Non nisi est sit amet. Malesuada fames ac turpis egestas sed. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Ut pharetra sit amet aliquam id diam maecenas. Adipiscing at in tellus integer feugiat scelerisque varius morbi.',
+    thirdParagraph: 'Diam sollicitudin tempor id eu nisl nunc mi ipsum. Et malesuada fames ac turpis egestas integer eget aliquet. Id nibh tortor id aliquet lectus proin. Pretium fusce id velit ut tortor pretium viverra. Viverra adipiscing at in tellus integer feugiat scelerisque. Interdum varius sit amet mattis. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis. Volutpat sed cras ornare arcu. In est ante in nibh mauris cursus mattis molestie. Risus viverra adipiscing at in tellus integer. Egestas integer eget aliquet nibh praesent tristique magna. Turpis tincidunt id aliquet risus. Egestas fringilla phasellus faucibus scelerisque eleifend. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Fermentum iaculis eu non diam phasellus. Adipiscing bibendum est ultricies integer quis. Sit amet nulla facilisi morbi tempus iaculis urna id.'
   }
 ];
 
@@ -135,12 +149,22 @@ function articleMaker(title, date, firstPar, secondPar, thirdPar) {
   artDate.classList.add('date');
   artButton.classList.add('expandButton');
 
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  artButton.textContent = "+";
+  artPar1.textContent = firstPar;
+  artPar2.textContent = secondPar;
+  artPar3.textContent = thirdPar;
+
   artButton.addEventListener('click', () => {
-    artButton.classList.toggle('article-open');
+    art.classList.toggle('article-open');
   });
 
-  return art
+  return art;
 };
 
 const articles = document.querySelector('.articles');
-console.log(articles);
+
+data.map((d) => {
+  articles.appendChild(articleMaker(d.title, d.date, d.firstParagraph, d.secondParagraph, d.thirdParagraph));
+});

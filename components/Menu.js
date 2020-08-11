@@ -65,4 +65,9 @@ function menuMaker(items){
     menu.classList.toggle('menu--open');
   });
 
+  console.log(menu);
+  return menu;
 }
+
+const header = document.querySelector('.header').appendChild(menuMaker(menuItems));
+

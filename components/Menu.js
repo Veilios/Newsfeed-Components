@@ -59,5 +59,10 @@ function menuMaker(items){
   listItem5.textContent = items[4];
   listItem6.textContent = items[5];
 
+  const menuButton = document.querySelector('.menu-button');
+
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+  });
 
 }
